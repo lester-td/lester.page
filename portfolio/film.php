@@ -1,4 +1,3 @@
-<?php require_once('assets/data/generate-manifests.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
