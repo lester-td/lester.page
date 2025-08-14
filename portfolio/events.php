@@ -1,0 +1,63 @@
+<?php require_once('assets/data/generate-manifests.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="shot by lester" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>events — shot by lester</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="site-title">shot by lester</div>
+    <div class="page-title">events<div class="menu-open"><i class="fa fa-bars" aria-hidden="true"></i></div></div>
+  </header>
+
+  <main class="layout">
+    <div class="main-content">
+      <div class="gallery events"></div>
+
+    </div>
+    <aside class="sidebar">
+      <div class="menu-close"><i class="fa fa-times" aria-hidden="true"></i></div>
+      <div class="sidebar-title">shot by lester</div>
+      <nav>
+<ul>
+  <li><a href="./">home</a></li>
+  <li><a href="portraits">portraits</a></li>
+  <li><a href="automotive">automotive</a></li>
+  <li><a href="streets">streets</a></li>
+  <li><a href="events" class="active-page">events</a></li>
+  <li><a href="film">film</a></li>
+  <li><a href="other">other</a></li>
+  <li><a href="blog">blog</a></li>
+</ul>
+</nav>
+      <footer class="desktop-footer">
+        <a aria-label="location"><i class="fa fa-location-arrow" aria-hidden="true"></i>singapore</a>
+        <p class="footer-spacer"></p>
+        <a href="https://facebook.com/lstrtd" aria-label="facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://instagram.com/lstrtd" aria-label="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="mailto:hello@lestertd.com" aria-label="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <p class="copyright">&copy; 2025 Lester Thomas</p>
+      </footer>
+    </aside>
+  </main>
+  <script src="assets/js/menu.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script>
+    Fancybox.bind("[data-fancybox='gallery']", {});
+  </script>
+</body>
+</html>

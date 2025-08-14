@@ -1,0 +1,28 @@
+:root {
+  --color-1: #aea8d9;
+  --color-2: #000000;
+  --color-3: #5a4eb1;
+  --color-4: #d8d5ec;
+  --color-select: #5a4eb1;
+  --color-titlebar-1: #5a4eb1;
+  --color-titlebar-2: #b68fcb;
+  --color-titlebar-text: #ffffff;
+  --color-titlebar-inactive-1: #808080;
+  --color-titlebar-inactive-2: #b8b4d0;
+  --color-titlebar-inactive-text: #ffffff;
+  --wallpaper: url(bg/lilac.jpg);
+  --wallpaper-style: cover;
+  --color-wallpaper: #929fe5;
+  --close: url(titlebar/close-lilac.png);
+  --close-active: url(titlebar/close-lilac-active.png);
+  --close-disabled: url(titlebar/close-lilac-disabled.png);
+  --font-face: 'tahoma-8pt', 'Tahoma';
+  --font-size-main: 1em;
+  --font-size-bold: 8pt;
+  --badge-1: url(88x31/lilac/lester.page_camera.gif);
+  --badge-2: url(88x31/lilac/madewithvscode.gif);
+  --badge-3: url(88x31/lilac/bestviewedwitheyes.gif);
+  --msgLineHeight: 1em;
+}
+
+body::after { content: unset !important; }

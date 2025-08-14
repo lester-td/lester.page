@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="assets/2000/favicon/world.ico?v=M44lzPylqQ">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/2000/favicon/world-apple.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link id="base-stylesheet" rel="stylesheet" href="assets/2000/base.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="assets/2000/std.css">
+    <style>
+      body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1000000;
+      background: #111;
+      pointer-events: none;
+      }
+    </style>
+    <title>&nbsp;lester.page</title>
+  </head>
+  <body>
+    <script src="assets/2000/js/rand-theme.js"></script>
+    <script src="assets/2000/js/window-drag.js"></script>
+    <script src="assets/2000/js/desktop-shell.js"></script>
+    <div id="container">
+      <div class="window drag">
+        <div class="inner">
+          <div class="titlebar handle">
+            <img src="assets/2000/16x16/world.png" class="titlebar-icon" draggable="false">
+            lester.page
+            <div class="titlebar-buttons">
+              <div class="close" onclick="window.location.href='desktop.html';" style="height: 14px; width: 16px;"></div>
+            </div>
+          </div>
+          <div class="content">
+            <table>
+              <tr>
+                <td><img class="profile-image" src="assets/2000/misc/profile-image.gif" draggable="false"></td>
+              </tr>
+              <tr>
+                <td class="intro">
+                  <b class="name">Lester Thomas</b><br>Full-time ICT undergrad student<br>Part-time photographer
+                </td>
+              </tr>
+            </table>
+            <div style="height: 10px"></div>
+            <table>
+              <tr>
+                <td colspan="2"><a href="./portfolio" class="link" target="_blank"><i class="fa fa-camera"></i>&thinsp;<u>P</u>hotography Portfolio</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://facebook.com/lstrtd" class="link" target="_blank"><i class="fab fa-facebook"></i>&thinsp;<u>F</u>acebook</a></td>
+                <td><a href="https://instagram.com/lstrtd" class="link" target="_blank"><i class="fab fa-instagram"></i>&thinsp;<u>I</u>nstagram</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://linkedin.com/in/lestertd" class="link" target="_blank"><i class="fab fa-linkedin"></i>&thinsp;<u>L</u>inkedin</a></td>
+                <td><a href="https://cara.app/lester01" class="link" target="_blank"><i class="fa-solid fa-c"></i>&thinsp;<u>C</u>ara</a></td>
+              </tr>
+              <tr>
+                <td colspan="2"><a href="mailto:hello@lestertd.com" class="link" target="_blank"><i class="fa fa-envelope"></i>&thinsp;<u>E</u>-mail</a></td>
+              </tr>
+            </table>
+            <div style="height: 10px"></div>
+            <table><tr><td>Based in Singapore</td></tr></table>
+            <div style="height: 10px"></div>
+            <div class="separator-h" style="width: 270px; height: 2px; margin-bottom: 7px"></div>
+            <div style="height: 10px"></div>
+            <div class="r88x31">
+              <div class="badge1"></div>
+              <div class="badge2"></div>
+              <div class="badge3"></div>
+            </div>
+          </div>
+          <div class="button-container">
+            <a class="text" style="color:#646464">inspired by nook.zone</a>
+            <a onclick="swapTheme()" class="link"><u>O</u>K</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

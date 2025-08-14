@@ -1,0 +1,28 @@
+:root {
+  --color-1: #ecd59d;
+  --color-2: #000000;
+  --color-3: #d7a52f;
+  --color-4: #f5eacf;
+  --color-select: #800080;
+  --color-titlebar-1: #d7a52f;
+  --color-titlebar-2: #e0cc88;
+  --color-titlebar-text: #ffffff;
+  --color-titlebar-inactive-1: #a0a0a4;
+  --color-titlebar-inactive-2: #d0cc90;
+  --color-titlebar-inactive-text: #f5eacf;
+  --wallpaper: url(bg/pumpkin.jpg);
+  --wallpaper-style: cover;
+  --color-wallpaper: #420042;
+  --close: url(titlebar/close-pumpkin.png);
+  --close-active: url(titlebar/close-pumpkin-active.png);
+  --close-disabled: url(titlebar/close-pumpkin-disabled.png);
+  --font-face: 'tahoma-8pt', 'Tahoma';
+  --font-size-main: 1em;
+  --font-size-bold: 8pt;
+  --badge-1: url(88x31/pumpkin/lester.page_camera.gif);
+  --badge-2: url(88x31/pumpkin/madewithvscode.gif);
+  --badge-3: url(88x31/pumpkin/bestviewedwitheyes.gif);
+  --msgLineHeight: 1em;
+}
+
+body::after { content: unset !important; }

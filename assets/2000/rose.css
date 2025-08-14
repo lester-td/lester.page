@@ -1,0 +1,28 @@
+:root {
+  --color-1: #cfafb7;
+  --color-2: #000000;
+  --color-3: #9f6070;
+  --color-4: #e7d8dc;
+  --color-select: #9f6070;
+  --color-titlebar-1: #a06070;
+  --color-titlebar-2: #d8ccd0;
+  --color-titlebar-text: #ffffff;
+  --color-titlebar-inactive-1: #a0a0a4;
+  --color-titlebar-inactive-2: #d0d4d0;
+  --color-titlebar-inactive-text: #7d7d7d;
+  --wallpaper: url(bg/rose.jpg);
+  --wallpaper-style: cover;
+  --color-wallpaper: #808080;
+  --close: url(titlebar/close-rose.png);
+  --close-active: url(titlebar/close-rose-active.png);
+  --close-disabled: url(titlebar/close-rose-disabled.png);
+  --font-face: 'tahoma-8pt', 'Tahoma';
+  --font-size-main: 1em;
+  --font-size-bold: 8pt;
+  --badge-1: url(88x31/rose/lester.page_camera.gif);
+  --badge-2: url(88x31/rose/madewithvscode.gif);
+  --badge-3: url(88x31/rose/bestviewedwitheyes.gif);
+  --msgLineHeight: 1em;
+}
+
+body::after { content: unset !important; }

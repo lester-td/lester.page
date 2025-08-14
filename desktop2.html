@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="assets/2000/favicon/desktop.ico?v=M44lzPylqQ">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/2000/favicon/desktop-apple.png">
+    <link id="base-stylesheet" rel="stylesheet" href="assets/2000/base.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="assets/2000/std.css">
+    <style>
+      body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1000000;
+      background: #111;
+      pointer-events: none;
+      }
+    </style>
+    <title>lester.page desktop</title>
+  </head>
+  <body>
+    <script src="assets/2000/js/window-drag.js"></script>
+    <script src="assets/2000/js/rand-theme.js"></script>
+    <script src="assets/2000/js/desktop-shell.js"></script>
+    <div id="taskbar">
+      <a id="start-button">
+        <div style="margin:1px"></div>
+        <img src="assets/2000/16x16/win.png" class="start-icon" draggable="false">
+        <div style="margin:1px"></div>
+        <b>Start</b>
+      </a>
+      <div class="separator-v" style="height: 22px; margin: 3px 1px 0px 5px;"></div>
+      <div class="separator-v-2" style="height: 18px; padding-right: 1px; margin: 5px 6px 0px 1px;"></div>
+      <div id="quick-launch">
+        <img src="assets/2000/16x16/desktop.png" class="ql-icon" draggable="false">
+        <img src="assets/2000/16x16/msie.png" class="ql-icon" draggable="false">
+        <img src="assets/2000/16x16/outlook.png" class="ql-icon" draggable="false">
+        <img src="assets/2000/16x16/briefcase.png" class="ql-icon" draggable="false">
+      </div>
+      <div class="separator-v" style="height: 22px; margin: 3px 1px 0px 6px;"></div>
+      <div class="separator-v-2" style="height: 18px; padding-right: 1px; margin: 5px 7px 0px 1px;"></div>
+      <div id="program-list">
+        <a class="program-active"><p>About Windows</p></a>
+        <a class="program-inactive"><p>Windows File Protection</p></a>
+        <a class="program-inactive"><p>Run</p></a>
+      </div>
+      <div id="tray">
+        <img src="assets/2000/16x16/mail-world.png" class="tray-icon" draggable="false">
+        <img src="assets/2000/16x16/network.png" class="tray-icon" draggable="false">
+        <img src="assets/2000/16x16/vol.png" class="tray-icon" draggable="false">
+        <div id="clock"></div>
+      </div>
+    </div>
+    <div id="start-menu">
+      <table id="start-menu-list" class="start-menu">
+        <tr>
+          <td id="start-menu-banner">
+             <div><img src="assets/2000/misc/start-banner-full.png" draggable="false"></div>
+          </td>
+          <td id="start-menu-content">
+              <div class="start-menu-item-first">
+                <a></a>
+              </div>
+              <div class="start-menu-item" onclick="swapTheme()">
+                <img src="assets/2000/32x32/theme.png" class="start-menu-item-icon" draggable="false">
+                <a>Change Theme</a>
+              </div>
+              <div class="start-menu-item">
+                <img src="assets/2000/32x32/start/winupdate.png" class="start-menu-item-icon" draggable="false">
+                <a>Windows Update</a>
+              </div>
+              <div class="separator-h" style="margin: 4px 2px; width: 190px;"></div>
+              <div id="start-menu-item-programs" class="start-menu-item">
+                <img src="assets/2000/32x32/start/programs.png" class="start-menu-item-icon" draggable="false">
+                <a>Programs</a>
+                <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+              </div>
+              <div id="start-menu-item-documents" class="start-menu-item">
+                <img src="assets/2000/32x32/start/dir-favourites.png" class="start-menu-item-icon" draggable="false">
+                <a>Favorite Links</a>
+                <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+              </div>
+              <div id="start-menu-item-settings" class="start-menu-item">
+                <img src="assets/2000/32x32/start/settings.png" class="start-menu-item-icon" draggable="false">
+                <a>Settings</a>
+                <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+              </div>
+              <div id="start-menu-item-search" class="start-menu-item">
+                <img src="assets/2000/32x32/start/file-search.png" class="start-menu-item-icon" draggable="false">
+                <a>Search</a>
+                <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+              </div>
+              <div class="start-menu-item">
+                <img src="assets/2000/32x32/start/help.png" class="start-menu-item-icon" draggable="false">
+                <a>Help</a>
+              </div>
+              <div class="start-menu-item">
+                <img src="assets/2000/32x32/start/run.png" class="start-menu-item-icon" draggable="false">
+                <a>Run...</a>
+              </div>
+              <div class="separator-h" style="margin: 4px 2px; width: 190px;"></div>
+              <div class="start-menu-item" onclick="window.location.href='index.html';">
+                <img src="assets/2000/32x32/start/key-win.png" class="start-menu-item-icon" draggable="false">
+                <a>Log Off Administrator...</a>
+              </div>
+              <div class="start-menu-item" onclick="window.location.href='index.html';">
+                <img src="assets/2000/32x32/start/shutdown.png" class="start-menu-item-icon" draggable="false">
+                <a>Shut Down...</a>
+              </div>
+              <div class="start-menu-item-last">
+                <a></a>
+              </div>
+          </td>
+        </tr>
+      </table>
+      <div id="start-menu-programs" class="start-menu">
+        <div id="start-menu-programs-accessories" class="start-submenu-item">
+          <img src="assets/2000/16x16/programs.png" class="start-submenu-item-icon" draggable="false">
+          <a>Accessories</a>
+          <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+        </div>
+        <div id="start-menu-programs-systools" class="start-submenu-item">
+          <img src="assets/2000/16x16/programs.png" class="start-submenu-item-icon" draggable="false">
+          <a>System Tools&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+        </div>
+        <div id="start-menu-programs-startup" class="start-submenu-item">
+          <img src="assets/2000/16x16/programs.png" class="start-submenu-item-icon" draggable="false">
+          <a>Startup</a>
+          <img src="assets/2000/32x32/start/menu-open.png" class="menu-open" draggable="false">
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/msie.png" class="start-submenu-item-icon" draggable="false">
+          <a>Internet Explorer</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/outlook.png" class="start-submenu-item-icon" draggable="false">
+          <a>Outlook Express</a>
+        </div>
+      </div>
+      <div id="start-menu-documents" class="start-menu">
+        <div class="start-submenu-item" onclick="window.location.href='./portfolio';">
+          <img src="assets/2000/16x16/camera.png" class="start-submenu-item-icon" draggable="false">
+          <a>Photography Portfolio</a>
+        </div>
+        <div class="start-submenu-item" onclick="window.location.href='index.html';">
+          <img src="assets/2000/16x16/world.png" class="start-submenu-item-icon" draggable="false">
+          <a>lester.page</a>
+        </div>
+        <div class="separator-h" style="margin: 4px 2px; width: 160px;"></div>
+        <div class="start-submenu-item" onclick="window.location.href='https://flashii.net';">
+          <img src="assets/2000/16x16/flashii.png" class="start-submenu-item-icon" draggable="false">
+          <a>Flashii</a>
+        </div>
+        <div class="start-submenu-item" onclick="window.location.href='https://nook.zone';">
+          <img src="assets/2000/16x16/nook.zone.png" class="start-submenu-item-icon" draggable="false">
+          <a>nook.zone</a>
+        </div>
+        <div class="start-submenu-item" onclick="window.location.href='https://winworldpc.com/home';">
+          <img src="assets/2000/16x16/winworld.jpeg" class="start-submenu-item-icon" draggable="false">
+          <a>WinWorld</a>
+        </div>
+        <div class="start-submenu-item" onclick="window.location.href='http://toastytech.com/guis/index.html';">
+          <img src="assets/2000/16x16/toastytech-gui.png" class="start-submenu-item-icon" draggable="false">
+          <a>ToastyTech GUI Gallery</a>
+        </div>
+        <div class="start-submenu-item" onclick="window.location.href='https://winclassic.boards.net/';">
+          <img src="assets/2000/16x16/winclassic.png" class="start-submenu-item-icon" draggable="false">
+          <a>WinClassic Forums</a>
+        </div>
+      </div>
+      <div id="start-menu-settings" class="start-menu">
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/dir-cpl.png" class="start-submenu-item-icon" draggable="false">
+          <a>Control Panel</a>
+        </div>
+        <div class="separator-h" style="margin: 4px 2px; width: 200px;"></div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/dir-network.png" class="start-submenu-item-icon" draggable="false">
+          <a>Network and Dial-up Connections</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/dir-printer.png" class="start-submenu-item-icon" draggable="false">
+          <a>Printers</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/win-button.png" class="start-submenu-item-icon" draggable="false">
+          <a>Taskbar & Start Menu...</a>
+        </div>
+      </div>
+      <div id="start-menu-search" class="start-menu">
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/file-search.png" class="start-submenu-item-icon" draggable="false">
+          <a>For Files or Folders...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/search-web.png" class="start-submenu-item-icon" draggable="false">
+          <a>On the Internet...</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/search-server.png" class="start-submenu-item-icon" draggable="false">
+          <a>For People...</a>
+        </div>
+      </div>
+      <div id="start-menu-accessories" class="start-menu">
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/address-book.png" class="start-submenu-item-icon" draggable="false">
+          <a>Address Book</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/calc.png" class="start-submenu-item-icon" draggable="false">
+          <a>Calculator</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/cmd.png" class="start-submenu-item-icon" draggable="false">
+          <a>Command Prompt</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/imaging.png" class="start-submenu-item-icon" draggable="false">
+          <a>Imaging</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/notepad.png" class="start-submenu-item-icon" draggable="false">
+          <a>Notepad</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/paint.png" class="start-submenu-item-icon" draggable="false">
+          <a>Paint</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/sync.png" class="start-submenu-item-icon" draggable="false">
+          <a>Synchronize</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/dir-search.png" class="start-submenu-item-icon" draggable="false">
+          <a>Windows Explorer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/wordpad.png" class="start-submenu-item-icon" draggable="false">
+          <a>WordPad</a>
+        </div>
+      </div>
+      <div id="start-menu-systools" class="start-menu">
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/backup.png" class="start-submenu-item-icon" draggable="false">
+          <a>Backup</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/charmap.png" class="start-submenu-item-icon" draggable="false">
+          <a>Character Map</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/disk-cleanup.png" class="start-submenu-item-icon" draggable="false">
+          <a>Disk Cleanup</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/defrag.png" class="start-submenu-item-icon" draggable="false">
+          <a>Disk Defragmenter</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/win-slanted.png" class="start-submenu-item-icon" draggable="false">
+          <a>Getting Started</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/schtasks.png" class="start-submenu-item-icon" draggable="false">
+          <a>Scheduled Tasks</a>
+        </div>
+        <div class="start-submenu-item">
+          <img src="assets/2000/16x16/sysinfo.png" class="start-submenu-item-icon" draggable="false">
+          <a>System Information&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+      </div>
+      <div id="start-menu-startup" class="start-menu">
+        <div class="grey-text start-submenu-item">
+          <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Empty)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+      </div>
+    </div>
+    <table id="desktop-icon-grid">
+      <tr>
+        <td>
+          <div class="desktop-icon">
+            <div class="icon-img">
+              <img src="assets/2000/32x32/mydocs.png" draggable="false">
+            </div>
+            <div class="icon-label">My Documents</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="desktop-icon">
+            <div class="icon-img">
+              <img src="assets/2000/32x32/computer.png" draggable="false">
+            </div>
+            <div class="icon-label">My Computer</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="desktop-icon">
+            <div class="icon-img">
+              <img src="assets/2000/32x32/netplaces.png" draggable="false">
+            </div>
+            <div class="icon-label">My Network<br>Places</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="desktop-icon">
+            <div class="icon-img">
+              <img src="assets/2000/32x32/recycle.png" draggable="false">
+            </div>
+            <div class="icon-label">Recycle Bin</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="desktop-icon">
+            <div class="icon-img">
+              <img src="assets/2000/32x32/msie.png" draggable="false">
+            </div>
+            <div class="icon-label">Internet<br>Explorer</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="desktop-icon">
+            <div class="icon-img">
+              <img src="assets/2000/32x32/netwiz.png" draggable="false">
+            </div>
+            <div class="icon-label">&nbsp;Connect to<br>&nbsp;the Internet</div>
+          </div>
+        </td>
+      </tr>
+    </table>    
+    <div id="container">
+      <div class="window drag" style="left:458px;top:219px;">
+        <div class="inner">
+          <div class="titlebar handle">
+            <!--<img src="assets/2000/16x16/file-win.png" class="titlebar-icon" draggable="false">-->
+           About Windows
+            <div class="titlebar-buttons">
+              <div class="close" style="height: 14px; width: 16px;"></div>
+            </div>
+          </div>
+          <img src="assets/2000/misc/win2000.png" draggable="false">
+          <div class="content">
+            <table>
+              <tr>
+                <td class="msgText">
+                  Microsoft (R) Windows<br>Version 5.0 (Build 2195: Service Pack 4)<br>Copyright (C) 1981-1999 Microsoft Corporation<br><br>This webpage is a recreation of the Windows 2000 desktop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>with HTML, CSS and JS. Cycle through the themes using the<br>Start Menu.<br>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="separator-h" style="width: 100%; margin:5px -1px"></div></td>
+              </tr>
+              <tr>
+                <td>Physical memory available to Windows : &nbsp;&nbsp;&nbsp;2,100,404 KB<br><br></td>
+              </tr>
+            </table>
+          </div>
+          <div class="button-container">
+            <a class="link"><u>O</u>K</a>
+          </div>
+        </div>
+      </div>
+      <div class="window drag" style="left:161px;top:24px;">
+        <div class="inner">
+          <div class="titlebar handle">
+            <!--<img src="assets/2000/16x16/file-win.png" class="titlebar-icon" draggable="false">-->
+            Windows File Protection
+            <div class="titlebar-buttons">
+              <div class="close" style="height: 14px; width: 16px;"></div>
+            </div>
+          </div>
+          <div class="content">
+            <table>
+              <tr>
+                <td class=msgIcon>
+                  <img src="assets/2000/32x32/cd-drive.png">
+                </td>
+                <td class="msgText">
+                  Files that are required for Windows to run properly have been<br>replaced by unrecognized versions. To maintain system stability,<br>Windows must restore the original versions of these files.<br><br>Insert your Windows 2000 Professional CD-ROM now.
+                </td>
+              </tr>
+            </table>
+            <!--<div style="width: 270px; height: 2px; background-color: white; border-top: 1px solid #808080"></div>-->
+          </div>
+          <div class="button-container">
+            <a class="link"><u>R</u>etry</a>
+            <div style="margin:2px"></div>
+            <a class="link"><u>M</u>ore Information</a>
+            <div style="margin:2px"></div>
+            <a class="link"><u>C</u>ancel</a>
+          </div>
+        </div>
+      </div>
+      <div class="window drag" style="left:100px;top:190px;">
+        <div class="inner">
+          <div class="titlebar handle">
+            <!--<img src="assets/2000/16x16/file-win.png" class="titlebar-icon" draggable="false">-->
+            Run
+            <div class="titlebar-buttons">
+              <div class="close" style="height: 14px; width: 16px;"></div>
+            </div>
+          </div>
+          <div class="content">
+            <table>
+              <tr>
+                <td class=msgIcon>
+                  <img src="assets/2000/32x32/application-hourglass.png">
+                </td>
+                <td class="msgText">
+                  Type the name of a program, folder, document, or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Internet resource, and Windows will open it for you.<br>&nbsp;
+                </td>
+              </tr>
+              <tr>
+                <td class="msgText">
+                  <u>O</u>pen:<br>&nbsp;
+                </td>
+                <td class="msgText">
+                  <input type="text" list="progs" style="font-family: tahoma-8pt; font-size: 16px; background-color: white; width:260px;">
+                    <datalist id="progs">
+                      <option value="cmd">
+                      <option value="sndvol32">
+                      <option value="explorer">
+                    </datalist><br>&nbsp;
+                </td>
+              </tr>
+            </table>
+            <!--<div style="width: 270px; height: 2px; background-color: white; border-top: 1px solid #808080"></div>-->
+          </div>
+          <div class="button-container">
+            <a class="link">OK</a>
+            <div style="margin:2px"></div>
+            <a class="link">Cancel</a>
+            <div style="margin:2px"></div>
+            <a class="link"><u>B</u>rowse...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

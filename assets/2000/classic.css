@@ -1,0 +1,28 @@
+:root {
+  --color-1: #c0c0c0;
+  --color-2: #000000;
+  --color-3: #808080;
+  --color-4: #ffffff;
+  --color-select: #000080;
+  --color-titlebar-1: #000080;
+  --color-titlebar-2: #1084d0;
+  --color-titlebar-text: #ffffff;
+  --color-titlebar-inactive-1: #808080;
+  --color-titlebar-inactive-2: #b5b5b5;
+  --color-titlebar-inactive-text: #c0c0c0;
+  --wallpaper: url(bg/classic.jpg);
+  --wallpaper-style: cover;
+  --color-wallpaper: #00807F;
+  --close: url(titlebar/close-classic.png);
+  --close-active: url(titlebar/close-classic-active.png);
+  --close-disabled: url(titlebar/close-classic-disabled.png);
+  --font-face: 'tahoma-8pt', 'Tahoma';
+  --font-size-main: 1em;
+  --font-size-bold: 8pt;
+  --badge-1: url(88x31/classic/lester.page_camera.gif);
+  --badge-2: url(88x31/classic/madewithvscode.gif);
+  --badge-3: url(88x31/classic/bestviewedwitheyes.gif);
+  --msgLineHeight: 1em;
+}
+
+body::after { content: unset !important; }
