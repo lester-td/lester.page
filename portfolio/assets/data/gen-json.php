@@ -1,4 +1,10 @@
 <?php
+// Absolute base paths
+$ROOT     = '/var/www/lester.page/portfolio';
+$IMGDIR   = $ROOT . '/assets/images';
+$POSTSDIR = $ROOT . '/assets/posts';
+$OUTDIR   = $ROOT . '/assets/data';
+
 function writeJson($path, $data) {
   $json = json_encode($data, JSON_PRETTY_PRINT);
   file_put_contents($path, $json);
@@ -20,6 +26,8 @@ function getWebpImagesRecursive($base, $prefix = '') {
 }
 
 function generateJsonManifests($rootDir, $namespace = '') {
+  global $OUTDIR;
+
   $dir = rtrim($rootDir, '/');
   $images = [];
 
@@ -32,19 +40,19 @@ function generateJsonManifests($rootDir, $namespace = '') {
   }
 
   $images = getWebpImagesRecursive($dir);
-  $jsonPath = 'assets/data/' . ($namespace ?: basename($dir)) . '.json';
+  $jsonPath = $OUTDIR . '/' . ($namespace ?: basename($dir)) . '.json';
   writeJson($jsonPath, $images);
 }
 
 // Generate gallery JSONs
-foreach (glob('assets/images/*') as $galleryRoot) {
+foreach (glob($IMGDIR . '/*') as $galleryRoot) {
   if (is_dir($galleryRoot)) {
     generateJsonManifests($galleryRoot);
   }
 }
 
 // Blog posts
-$posts = glob("assets/posts/*.md");
+$posts = glob($POSTSDIR . '/*.md');
 
 // Sort newest first based on filename (assumes yyyymmdd-hhmm-title.md)
 usort($posts, function($a, $b) {
@@ -64,5 +72,4 @@ $postList = array_map(function($file) {
   ];
 }, $posts);
 
-writeJson("assets/data/posts.json", $postList);
-?>
+writeJson($OUTDIR . '/posts.json', $postList);
